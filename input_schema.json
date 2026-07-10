@@ -1,0 +1,38 @@
+{
+  "title": "Awwwards Scraper Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "searchQueries": {
+      "title": "Search Queries",
+      "type": "array",
+      "description": "List of keywords to search for.",
+      "editor": "stringList",
+      "prefill": [
+        "awwwards"
+      ],
+      "default": [
+        "awwwards"
+      ]
+    },
+    "maxItems": {
+      "title": "Max Items",
+      "type": "integer",
+      "description": "Maximum number of items to extract.",
+      "default": 100,
+      "minimum": 1
+    },
+    "proxyConfig": {
+      "title": "Proxy Configuration",
+      "type": "object",
+      "description": "Select proxies to be used.",
+      "editor": "proxy",
+      "default": {
+        "useApifyProxy": true
+      }
+    }
+  },
+  "required": [
+    "searchQueries"
+  ]
+}

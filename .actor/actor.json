@@ -1,0 +1,20 @@
+{
+  "actorSpecification": 1,
+  "name": "awwwards-scraper",
+  "title": "Awwwards Scraper",
+  "description": "Fast and reliable scraper for Awwwards. Extract data seamlessly.",
+  "version": "0.0",
+  "meta": {
+    "templateId": "ts-crawlee-playwright-chrome"
+  },
+  "input": "../input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "output": "./output_schema.json",
+  "pricing": {
+    "pricingModel": "PAY_PER_EVENT",
+    "pricePerEventUsd": 0.002
+  },
+  "storages": {
+    "dataset": "../dataset_schema.json"
+  }
+}

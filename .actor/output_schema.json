@@ -1,0 +1,11 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Output schema of awwwards-scraper",
+  "properties": {
+    "results": {
+      "type": "string",
+      "title": "Results",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    }
+  }
+}
