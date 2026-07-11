@@ -1,0 +1,57 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "type": "object",
+    "properties": {
+      "url": {
+        "type": "string",
+        "title": "URL",
+        "description": "URL of the listing"
+      },
+      "title": {
+        "type": "string",
+        "title": "Title",
+        "description": "Site title"
+      },
+      "score": {
+        "type": "number",
+        "title": "Score",
+        "description": "Site score"
+      },
+      "developer": {
+        "type": "string",
+        "title": "Developer",
+        "description": "Developer name"
+      },
+      "externalUrl": {
+        "type": "string",
+        "title": "External URL",
+        "description": "Link to the external site"
+      },
+      "tags": {
+        "type": "array",
+        "title": "Tags",
+        "description": "Site tags",
+        "items": { "type": "string" }
+      }
+    }
+  },
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": [
+          "url",
+          "title",
+          "score",
+          "developer",
+          "externalUrl",
+          "tags"
+        ]
+      },
+      "display": {
+        "component": "table"
+      }
+    }
+  }
+}
