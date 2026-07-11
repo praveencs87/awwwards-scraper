@@ -4,7 +4,7 @@ import { PlaywrightCrawler } from 'crawlee';
 await Actor.init();
 
 const input = await Actor.getInput() || {};
-const { searchQueries = [], maxItems = 50, proxyConfig } = input;
+const { startUrls = [], maxItems = 50, proxyConfig } = input;
 
 const proxyConfiguration = await Actor.createProxyConfiguration(proxyConfig);
 
@@ -83,15 +83,16 @@ const crawler = new PlaywrightCrawler({
 
 const initialRequests = [];
 
-if (searchQueries && searchQueries.length > 0) {
-    for (const query of searchQueries) {
+if (startUrls && startUrls.length > 0) {
+    for (const req of startUrls) {
         initialRequests.push({
-            url: `https://www.awwwards.com/inspiration/search?text=${encodeURIComponent(query)}`,
+            url: typeof req === 'string' ? req : req.url,
             label: 'SEARCH_PAGE'
         });
     }
 } else {
     // Default fallback
+    log.warning('No startUrls provided. Using default.');
     initialRequests.push({
         url: 'https://www.awwwards.com/websites/',
         label: 'SEARCH_PAGE'

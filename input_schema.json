@@ -3,16 +3,13 @@
   "type": "object",
   "schemaVersion": 1,
   "properties": {
-    "searchQueries": {
-      "title": "Search Queries",
+    "startUrls": {
+      "title": "Start URLs",
       "type": "array",
-      "description": "List of keywords to search for.",
-      "editor": "stringList",
+      "description": "List of Awwwards URLs (e.g. websites, collections) to scrape.",
+      "editor": "requestListSources",
       "prefill": [
-        "awwwards"
-      ],
-      "default": [
-        "awwwards"
+        { "url": "https://www.awwwards.com/websites/" }
       ]
     },
     "maxItems": {
@@ -33,6 +30,6 @@
     }
   },
   "required": [
-    "searchQueries"
+    "startUrls"
   ]
 }
